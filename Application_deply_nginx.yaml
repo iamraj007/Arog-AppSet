@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/iamraj007/Arog-AppSet.git
     targetRevision: HEAD
-    path: apps/Application_deply_nginx.yaml
+    path: apps/ngix-app.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: default
