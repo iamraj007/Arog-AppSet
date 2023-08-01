@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: gitops-web-frontend
-  namespace: frontend
 spec:
   replicas: 2
   selector:
@@ -21,10 +20,3 @@ spec:
         ports:
         - containerPort: 80
           protocol: TCP
----
-apiVersion: apps/v1
-kind: Namespace
-metadata:
-  name: frontend
-  labels:
-    azure-key-vault-env-injection: enabled
