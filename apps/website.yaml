@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: site-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: site-app
+  template:
+    metadata:
+      labels:
+        app: site-app
+        name: site-app
+    spec:
+      containers:
+      - image: iamraj007/site
+       name: site-app
+        ports:
+        - containerPort: 80
+          protocol: TCP
