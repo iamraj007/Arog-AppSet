@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/iamraj007/Arog-AppSet.git
     targetRevision: HEAD
-    path: apps
+    path: apps/overlays/ngix
   destination:
     server: https://kubernetes.default.svc
     namespace: default
