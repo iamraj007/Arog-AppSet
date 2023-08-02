@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: appset-poc
+  namespace: argocd
+spec:
+  generators:
+  - list:
+      elements:
+      - EnvName: ngix
+        namespace: default
+        clustername: https://kubernetes.default.svc
+  template:
+    metadata:
+      name: "{{EnvName}}-app-{{namespace}}"
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/iamraj007/Arog-AppSet.git
+        targetRevision: HEAD
+        path: apps/overlays/{{EnvName}}
+      destination:
+        server: "{{clustername}}"
+        namespace: "{{namespace}}"
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+        - PruneLast=true
