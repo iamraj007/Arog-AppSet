@@ -1,0 +1,11 @@
+apiVersion: spv.no/v2beta1
+kind: AzureKeyVaultSecret
+metadata:
+  name: registry-config
+  namespace: akv2k8s
+spec:
+  vault:
+    name: My-Devvalue
+    object:
+      name: registry-config.yaml
+      type: secret

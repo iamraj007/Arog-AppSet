@@ -1,0 +1,11 @@
+apiVersion: spv.no/v2beta1
+kind: AzureKeyVaultSecret
+metadata:
+  name: grafana-config-yaml
+  namespace: akv2k8s
+spec:
+  vault:
+    name: My-Devvalue
+    object:
+      name: grafana-config.yaml
+      type: secret
