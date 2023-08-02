@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/iamraj007/Arog-AppSet.git
     targetRevision: value
-    path: value/overlays/dev
+    path: overlays/dev
   destination:
     server: https://kubernetes.default.svc
     namespace: default
